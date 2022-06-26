@@ -1,13 +1,13 @@
-const contacts = require("../servise/contacts");
+const { Contact } = require("../models/contact");
 const createError = require("../helpers/createError");
 
 const getContactById = async (req, res) => {
-    const { id } = req.params;
-    const result = await contacts.getContactById(id);
-    if (!result) {
-      throw createError(404);
-    }
-    res.json(result);
+  const { id } = req.params;
+  const result = await Contact.findById(id);
+  if (!result) {
+    throw createError(404);
+  }
+  res.json(result);
 };
 
 module.exports = getContactById;
