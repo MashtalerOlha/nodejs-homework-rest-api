@@ -4,7 +4,7 @@ const router = express.Router();
 const { validation, isValidId } = require("../../middlewares");
 const { contactAddSchema, updateFavorite } = require("../../models/contact");
 
-const controllers = require("../../controllers");
+const controllers = require("../../controllers/contacts");
 const controlWrapper = require("../../helpers/controlWrapper");
 
 router.get("/", controlWrapper(controllers.getAll));
