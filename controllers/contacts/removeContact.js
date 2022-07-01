@@ -1,5 +1,5 @@
-const { Contact } = require("../models/contact");
-const createError = require("../helpers/createError");
+const { Contact } = require("../../models/contact");
+const createError = require("../../helpers/createError");
 
 const removeContact = async (req, res) => {
   const { id } = req.params;
