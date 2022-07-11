@@ -15,7 +15,9 @@ const userLoginShema = Joi.object({
 });
 
 const updateSubscriptionSchema = Joi.object({
-  subscription:Joi.string().valid(...subscription).required(),
+  subscription: Joi.string()
+    .valid(...subscription)
+    .required(),
 });
 
 const userShema = Schema({
@@ -34,6 +36,9 @@ const userShema = Schema({
     default: "starter",
   },
   token: String,
+  avatarURL: {
+    type: String,
+  },
 });
 
 const User = model("user", userShema);
@@ -43,5 +48,4 @@ module.exports = {
   userRegisterShema,
   userLoginShema,
   updateSubscriptionSchema,
-  
 };
