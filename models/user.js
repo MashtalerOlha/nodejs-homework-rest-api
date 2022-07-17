@@ -39,6 +39,14 @@ const userShema = Schema({
   avatarURL: {
     type: String,
   },
+  verify: {
+    type: Boolean,
+    default: false,
+  },
+  verificationToken: {
+    type: String,
+    required: [true, 'Verify token is required'],
+  }
 });
 
 const User = model("user", userShema);
